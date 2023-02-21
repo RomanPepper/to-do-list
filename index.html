@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Merriweather:wght@300;400&family=Montserrat:wght@300;400;500&display=swap"
+          rel="stylesheet">
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="/icons/logo_simple.svg" type="svg">
+</head>
+
+<body>
+<nav class="nav">
+    <div class="container">
+        <!-- navbar для стандартных устройств -->
+        <ul class="nav__body nav__body_main">
+            <li class="nav__item">
+                <a href="/index.html">Список задач</a>
+            </li>
+            <li class="nav__item">
+                <a href="/html/author_info.html">Об авторе</a>
+            </li>
+            <!-- <li class="nav__item">
+                <a href="#">Личный кабинет</a>
+            </li> -->
+        </ul>
+
+        <!-- navbar для мобильных устройств -->
+        <ul class="nav__body nav__body_side">
+            <li class="nav__item">
+                <a href="/index.html">Список задач</a>
+            </li>
+            <li class="nav__item">
+                <a href="/html/author_info.html">Об авторе</a>
+            </li>
+            <!-- <li class="nav__item">
+                <a href="#">Личный кабинет</a>
+            </li> -->
+        </ul>
+
+        <!-- Заготовка для гамбургера (на мобильных устройствах будет использовано с JS) -->
+        <div class="hamburger">
+            <div class="hamburger__block"></div>
+            <div class="hamburger__block"></div>
+            <div class="hamburger__block"></div>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <h1 class="title title__list-page">To Do List</h1>
+        <div class="task-list__wrapper">
+            <ul class="task-list__list">
+                <li class="task__instance task__instance_completed">
+                    <div class="task__info-wrapper">
+                        <div class="task__completion-indicator">
+                            <img src="/icons/checkbox_checked.svg" class="task__state-image" alt="check_status">
+                        </div>
+                        <p class="task__text">ДЗ по ТФКП: написать завещание</p>
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_main">
+                        <img src="/img/edit_task_button.png" alt="" class="task__button_main">
+                        <img src="/img/delete_task_button.png" alt="" class="task__button_main">
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_side">
+                        <div class="task__button_side task__button_edit-task">Редакт.</div>
+                        <div class="task__button_side task__button_delete-task">Удалить</div>
+                    </div>
+                </li>
+                <li class="task__instance">
+                    <div class="task__info-wrapper">
+                        <div class="task__completion-indicator">
+                            <img src="/icons/checkbox_not_checked.svg" class="task__state-image" alt="check_status">
+                        </div>
+                        <p class="task__text">1 атта по вебтеху: доделать вёрстку</p>
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_main">
+                        <img src="/img/edit_task_button.png" alt="" class="task__button_main">
+                        <img src="/img/delete_task_button.png" alt="" class="task__button_main">
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_side">
+                        <div class="task__button_side task__button_edit-task">Редакт.</div>
+                        <div class="task__button_side task__button_delete-task">Удалить</div>
+                    </div>
+                </li>
+                <li class="task__instance">
+                    <div class="task__info-wrapper">
+                        <div class="task__completion-indicator">
+                            <img src="/icons/checkbox_not_checked.svg" class="task__state-image" alt="check_status">
+                        </div>
+                        <p class="task__text">Приготовить завтрак: омега-3, д3, креатин, кальций, магний, вода</p>
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_main">
+                        <img src="/img/edit_task_button.png" alt="" class="task__button_main">
+                        <img src="/img/delete_task_button.png" alt="" class="task__button_main">
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_side">
+                        <div class="task__button_side task__button_edit-task">Редакт.</div>
+                        <div class="task__button_side task__button_delete-task">Удалить</div>
+                    </div>
+                </li>
+                <li class="task__instance">
+                    <div class="task__info-wrapper">
+                        <div class="task__completion-indicator">
+                            <img src="/icons/checkbox_not_checked.svg" class="task__state-image" alt="check_status">
+                        </div>
+                        <p class="task__text">Пощикотать паука</p>
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_main">
+                        <img src="/img/edit_task_button.png" alt="" class="task__button_main">
+                        <img src="/img/delete_task_button.png" alt="" class="task__button_main">
+                    </div>
+                    <div class="task__buttons-wrapper task__buttons-wrapper_side">
+                        <div class="task__button_side task__button_edit-task">Редакт.</div>
+                        <div class="task__button_side task__button_delete-task">Удалить</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__content">
+        Designed and Developed by <span>Roman Pepper from Bebra-IT</span> | All Rights Reserved &copy;
+    </div>
+</footer>
+<script src="/js/to_do_list/switch_task_status.js"></script>
+<script src="/js/visual/navbar_hamburger.js"></script>
+</body>
+
+</html>

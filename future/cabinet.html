@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Merriweather:wght@300;400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <title>Личный Кабинет</title>
+    <link rel="shortcut icon" href="/icons/logo_simple.svg" type="svg">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <!-- navbar для стандартных устройств -->
+            <ul class="nav__body nav__body_main">
+                <li class="nav__item">
+                    <a href="/index.html">Список задач</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/html/author_info.html">Об авторе</a>
+                </li>
+                <!-- <li class="nav__item">
+                    <a href="#">Личный кабинет</a>
+                </li> -->
+            </ul>
+
+            <!-- navbar для мобильных устройств -->
+            <ul class="nav__body nav__body_side">
+                <li class="nav__item">
+                    <a href="/index.html">Список задач</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/html/author_info.html">Об авторе</a>
+                </li>
+                <!-- <li class="nav__item">
+                    <a href="#">Личный кабинет</a>
+                </li> -->
+            </ul>
+
+            <!-- Заготовка для гамбургера (на мобильных устройствах будет использовано с JS) -->
+            <div class="hamburger">
+                <div class="hamburger__block"></div>
+                <div class="hamburger__block"></div>
+                <div class="hamburger__block"></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h1 class="title title__program">Личный кабинет</h1>
+            <div class="cabinet__wrapper">
+                <div class="cabinet__carousel">
+                    <form class="cabinet__form cabinet__form_login">
+                        <span>
+                            <label for="login">Ваш логин:</label>
+                            <input type="text" name="login" class="cabinet__input">
+                        </span>
+                        <span>
+                            <label for="pass">Ваш пароль:</label>
+                            <input type="password" name="pass" class="cabinet__input">
+                        </span>
+                        <button class="button button__save-data" type="submit" data-target="login">Войти</button>
+                        <button class="button button__login-switch button__login-switch_to-reg">У меня нет
+                            аккаунта</button>
+                    </form>
+                    <form class="cabinet__form cabinet__form_register">
+                        <span>
+                            <label for="login">Ваш логин:</label>
+                            <input type="text" name="login" class="cabinet__input">
+                        </span>
+                        <span>
+                            <label for="pass">Ваш пароль:</label>
+                            <input type="password" name="pass" class="cabinet__input">
+                        </span>
+                        <button class="button button__save-data" type="submit"
+                            data-target="reg">Зарегистрироваться</button>
+                        <button class="button button__login-switch button__login-switch_to-log">У меня уже есть
+                            аккаунт</button>
+                    </form>
+                </div>
+                <form class="cabinet__form cabinet__form_logged">
+                    <span>
+                        <label for="login">Ваш логин:</label>
+                        <input type="text" name="login" 
+                            class="cabinet__input">
+                    </span>
+                    <button class="button button__logout" type="submit" data-target="logout">Выйти</button>
+                </form>
+            </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            Designed and Developed by <span>Roman Pepper from Bebra-IT</span> | All Rights Reserved &copy;
+        </div>
+    </footer>
+    <script src="\js\carousels\cabinet_caruosel.js"></script>
+    <!-- <script src="/js/ajax.js"></script>
+    <script src="/js/cookie_functions.js"></script>
+    <script src="/js/nav_hamburger.js"></script>
+    <script>
+        if (getCookie('login') != undefined) {
+            document.querySelector('.cabinet__carousel').style.display = 'none';
+            document.querySelector('.cabinet__form_logged').style.display = 'flex';
+            document.querySelector('.cabinet__wrapper').style.height = 'auto';
+        };
+    </script>
+    <script>
+        document.querySelector('.button__login-switch_to-reg').onclick = function(event) {
+            event.preventDefault();
+            document.querySelector('.cabinet__carousel').style.left = '-100%';
+        };
+        document.querySelector('.button__login-switch_to-log').onclick = function(event) {
+            event.preventDefault();
+            document.querySelector('.cabinet__carousel').style.left = '0%';
+        };
+    </script>
+    <script>
+        function f5(ans) {
+            if (ans.responseText == "Такой пользователь уже существует") {
+                alert('Такой пользователь уже существует');
+            } else if (ans.responseText == 'Регистрация прошла успешно') {
+                window.location.reload();
+            } else if (ans.responseText == login) {
+                setCookie('login', ans.responseText, options = {
+                    'max-age': 4233600
+                });
+                window.location.reload();
+            } else if (ans.responseText == '') {
+                alert('Такого пользователя нет');
+            };
+            console.log(ans)
+        };
+
+        document.querySelectorAll('.button__save-data').forEach(function(element) {
+            element.onclick = function(event) {
+                event.preventDefault();
+                login = element.parentElement.firstElementChild.lastElementChild.value;
+                pass = element.parentElement.children[1].lastElementChild.value;
+                target = element.getAttribute('data-target');
+                if (login == '' || pass == '') {
+                    alert('Данные введены некорректно');
+                    return;
+                };
+                args = `login=${login}&pass=${pass}&target=${target}`;
+                SendRequest('POST', '/core/cabinet_req.php', args, f5);
+            }
+        });
+
+        document.querySelector('.button__logout').onclick = function(event) {
+            event.preventDefault();
+            deleteCookie('login');
+            window.location.reload();
+        };
+    </script> -->
+</body>
+
+</html>

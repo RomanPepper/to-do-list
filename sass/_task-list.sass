@@ -1,0 +1,96 @@
+.task-list
+    margin-top: 50px
+    overflow-x: auto
+    &__wrapper
+        padding: 0 20% 0
+    &__list
+        width: 100%
+        margin: auto
+            
+       
+.task
+    &__state-image
+        width: 20px
+        user-select: none
+    &__completion-indicator
+        margin-right: 16px
+    &__instance
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+        background-color: $main_color_tr
+        padding: 8px
+        border-bottom: 2px solid $main_color
+        align-items: center
+        width: 100%
+        margin: 10px auto auto
+        user-select: none
+        transition-duration: 0.5s
+        overflow-x: hidden
+        p:hover
+            text-shadow: 5px 5px 5px rgba(130, 130, 130, 0.9)
+            transition-duration: 0.2s
+            cursor: pointer
+        &_completed
+            p
+                text-decoration: line-through
+    &__info-wrapper
+        display: flex
+        flex-direction: row
+        justify-content: start
+    &__text
+        font-family: 'Comfortaa'
+        font-size: 14px
+        user-select: none
+        position: relative
+        top: 4px
+    &__buttons-wrapper_side
+        display: none
+    &__button_main
+            user-select: none
+            cursor: pointer
+            width: 30px
+            &:last-child
+                margin-left: 8p
+
+
+
+@media (max-width: 1199px)
+    .task
+        &__buttons-wrapper
+            &_main
+                display: none
+            &_side
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                position: relative
+                left: 176px
+        &__instance
+            position: relative
+        &__button
+            &_side
+                font-family: 'Comfortaa'
+                font-size: 14px
+                user-select: none
+                height: 100%
+                padding: 10px
+                color: white
+            &_edit-task
+                background-color: #8a8888
+            &_delete-task
+                background-color: #f54753
+
+        &__instance
+            &:hover
+                text-decoration: none
+                cursor: auto
+
+@media (max-width: 991px)
+    .task-list__wrapper
+        padding: 0 5% 0
+
+@media (max-width: 767px)
+    .task-list__wrapper
+        padding: 0
+

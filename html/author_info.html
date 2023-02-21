@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Merriweather:wght@300;400&family=Montserrat:wght@300;400;500&display=swap"
+          rel="stylesheet">
+    <title>About the author</title>
+    <link rel="shortcut icon" href="/icons/logo_simple.svg" type="svg">
+</head>
+
+<body>
+<nav class="nav">
+    <div class="container">
+        <!-- navbar для стандартных устройств -->
+        <ul class="nav__body nav__body_main">
+            <li class="nav__item">
+                <a href="/index.html">Список задач</a>
+            </li>
+            <li class="nav__item">
+                <a href="/html/author_info.html">Об авторе</a>
+            </li>
+            <!-- <li class="nav__item">
+                <a href="#">Личный кабинет</a>
+            </li> -->
+        </ul>
+
+        <!-- navbar для мобильных устройств -->
+        <ul class="nav__body nav__body_side">
+            <li class="nav__item">
+                <a href="/index.html">Список задач</a>
+            </li>
+            <li class="nav__item">
+                <a href="/html/author_info.html">Об авторе</a>
+            </li>
+            <!-- <li class="nav__item">
+                <a href="#">Личный кабинет</a>
+            </li> -->
+        </ul>
+
+        <!-- Заготовка для гамбургера (на мобильных устройствах будет использовано с JS) -->
+        <div class="hamburger">
+            <div class="hamburger__block"></div>
+            <div class="hamburger__block"></div>
+            <div class="hamburger__block"></div>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <h1 class="title title__list-page">Об авторе</h1>
+        <div class="author__wrapper">
+            <div class="author__text-info">
+                <p>
+                    <span>Автор:</span> Перцев Роман Юрьевич, студент ФКН ВГУ, 1 курс.
+                </p>
+                <br>
+                <p>
+                    <span>Описание сайта:</span> стандартный список задач. Впоследствии планируется внедрение
+                    функционала:
+                    возможность добавить(убрать) задачу в список(из списка),
+                    возможность обновления статуса задачи (выполнено/ожидает выполнения),
+                    личный кабинет с пользовательской системой (регистрация/авторизация)
+                </p>
+            </div>
+            <div class="author__links-wrapper">
+                <a href="mailto:wupsen1703@mail.ru"><img class="author__link" src="/icons/email_logo.svg"
+                                                         alt="email"></a>
+                <a href="https://github.com/RomanPepper"><img class="author__link" src="/icons/github_logo.svg"
+                                                              alt="github"></a>
+                <a href="https://vk.com/i_want_a_pizza"><img class="author__link" src="/icons/vk_logo.svg" alt="vk"></a>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__content">
+        Designed and Developed by <span>Roman Pepper from Bebra-IT</span> | All Rights Reserved &copy;
+    </div>
+</footer>
+<script src="/js/visual/navbar_hamburger.js"></script>
+</body>
+
+</html>
